@@ -27,8 +27,8 @@
     setClassOnDocumentBody(localStorageTheme);
   } else if (supportsColorSchemeQuery) {
     // source of truth from system
-    setClassOnDocumentBody(mql.matches);
-    localStorage.setItem(storageKey, mql.matches);
+    setClassOnDocumentBody('dark');
+    localStorage.setItem(storageKey, JSON.stringify('dark'));
   } else {
     // source of truth from document.body
     var theme = document.body.dataset.theme;

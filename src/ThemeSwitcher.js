@@ -25,8 +25,8 @@ function getValue(key, colors) {
 const createThemeColors = (lightness, contrast) => {
   const ratios = [1.1,1.55,2.14,3.05,4.34,6.08,8.34,11.2,16.09];
 
-  let Gray = new BackgroundColor({"name":"Gray","colorKeys":["#31333D"],"ratios": ratios,"colorspace":"CAM02"});
-  // let Gray = new BackgroundColor({"name":"Gray","colorKeys":["#D5CFFF", "#27243B", "#0F0717"],"ratios": ratios,"colorspace":"CAM02"});
+  // let Gray = new BackgroundColor({"name":"Gray","colorKeys":["#31333D"],"ratios": ratios,"colorspace":"CAM02"});
+  let Gray = new BackgroundColor({"name":"Gray","colorKeys":["#D5CFFF", "#27243B", "#0F0717"],"ratios": ratios,"colorspace":"CAM02"});
   let Blue = new Color({"name":"Blue","colorKeys":["#0a93ff"],"ratios": ratios,"colorspace":"LAB"});
   let Teal = new Color({"name":"Teal","colorKeys":["#34eade", "#005e56"],"ratios": ratios,"colorspace":"CAM02"});
   let Green = new Color({"name":"Green","colorKeys":["#16e967"],"ratios": ratios,"colorspace":"LAB"});
@@ -58,10 +58,10 @@ const createThemeColors = (lightness, contrast) => {
 }
 
 const ThemeSwitcher = ({ handleSetTheme }) => {
-  const [theme, setTheme] = useLocalStorage('theme', '');
+  const [theme, setTheme] = useLocalStorage('theme', null);
 
   const lightColorScale = createThemeColors(100, 1);
-  const darkColorScale = createThemeColors(5, 1);
+  const darkColorScale = createThemeColors(3, 1);
 
   const themes = {
     light: {
@@ -218,6 +218,8 @@ const ThemeSwitcher = ({ handleSetTheme }) => {
         themes,
       });
     });
+
+    // setTheme(document.body.dataset.theme);
   }, []);
 
   return (

@@ -37,7 +37,7 @@ const renderColorValue = (value) => {
         <Code mr={2}>var(--{color.replace('$', '')})</Code>
         <Flex alignItems="center">        
           <Icon icon="times" fontSize={0} color="var(--gray400)" mr={2} />
-          <Badge variant="outline" color="gray">{modifier}({amount})</Badge>
+          <Badge variant="outline" color="gray">{modifier} ( {amount} )</Badge>
         </Flex>
       </Flex>
     );
