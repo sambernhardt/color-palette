@@ -3,7 +3,7 @@ import { Box } from 'rebass';
 
 const getVariantStyles = (color) => ({
   solid: {
-    textColor: `var(--text-on-background-${color})`,
+    textColor: color === 'white' ? "#0F0717" : `var(--text-on-background-${color})`,
     backgroundColor: `var(--background-${color})`,
     backgroundColorHover: `var(--background-${color}-hover)`,
     backgroundColorActive: `var(--background-${color}-active)`,
@@ -11,19 +11,26 @@ const getVariantStyles = (color) => ({
   },
   outline: {
     textColor: `var(--text-${color})`,
-    backgroundColor: `var(--transparent)`,
+    backgroundColor: `transparent`,
     backgroundColorHover: `var(--hover)`,
     backgroundColorActive: `var(--active)`,
     borderColor: `var(--border)`,
   },
+  knockoutOutline: {
+    textColor: `var(--text-on-background-${color})`,
+    backgroundColor: `transparent`,
+    backgroundColorHover: `var(--hover)`,
+    backgroundColorActive: `var(--active)`,
+    borderColor: `var(--border-on-background-${color})`,
+  },
   ghost: {
     textColor: `var(--text-${color})`,
-    backgroundColor: `var(--transparent)`,
+    backgroundColor: `transparent`,
     backgroundColorHover: `var(--hover)`,
     backgroundColorActive: `var(--active)`,
     borderColor: `transparent`,
   },
-})
+});
 
 const Button = ({ color, variant, ...props }) => {
   const { textColor, backgroundColor, backgroundColorHover, backgroundColorActive, borderColor } = getVariantStyles(color)[variant];

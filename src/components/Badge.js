@@ -19,13 +19,13 @@ const getVariantStyles = (color) => ({
   outline: {
     iconColor: `var(--icon-${color})`,
     textColor: `var(--text-${color})`,
-    backgroundColor: `var(--transparent)`,
+    backgroundColor: `transparent`,
     borderColor: `var(--border)`,
   },
   ghost: {
     iconColor: `var(--icon-${color})`,
     textColor: `var(--text-${color})`,
-    backgroundColor: `var(--transparent)`,
+    backgroundColor: `transparent`,
     borderColor: `transparent`,
   },
 })
@@ -40,9 +40,9 @@ const Badge = ({ color, children, icon, variant, ...props }) => {
         align-items: center;
         background: ${backgroundColor};
         border: 1px solid ${borderColor};
-        padding: 20px;
         padding: 4px 8px;
         border-radius: 8px;
+        gap: 8px;
       `}
       {...props}
     >
@@ -51,11 +51,10 @@ const Badge = ({ color, children, icon, variant, ...props }) => {
           icon={icon}
           weight="solid"
           color={iconColor}
-          mr={2}
           fontSize={0}
         />
       )}
-      <Text
+      {children && <Text
         as="p"
         fontFamily="Inter"
         color={textColor}
@@ -63,7 +62,7 @@ const Badge = ({ color, children, icon, variant, ...props }) => {
         fontWeight="bold"
       >
         {children}
-      </Text>
+      </Text>}
     </Box>
   )
 }

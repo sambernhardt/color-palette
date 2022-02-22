@@ -17,6 +17,7 @@ const Tabs = ({ tabs }) => {
     >
       {tabs.map((tab, index) => (
         <Text
+          key={tab.label}
           as="button"
           fontWeight="bold"
           color={index === selectedTab ? `var(--text-primary)` : `var(--text-secondary)`}
