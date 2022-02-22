@@ -16,7 +16,7 @@ const getVariantStyles = (color) => ({
     iconColor: `var(--icon-${color})`,
     textHeadingColor: `var(--text-primary)`,
     textBodyColor: `var(--text-${color}-muted)`,
-    backgroundColor: `var(--background-${color}-muted-alpha)`,
+    backgroundColor: `var(--background-${color}-muted)`,
     borderColor: `transparent`,
   },
   outline: {

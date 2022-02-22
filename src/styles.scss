@@ -1,6 +1,6 @@
-// * {
-//   transition-duration: .5s;
-// }
+* {
+  transition: color .5s, background .5s;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
@@ -94,9 +94,11 @@ table {
   border-collapse: collapse;
   border: none;
 
+  td {
+  }
   th, td {
-    padding: 14px;
     border: 1px solid var(--border);
+    padding: 14px;
     text-align: left;
     font-size: 16px;
   }

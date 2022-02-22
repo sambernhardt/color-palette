@@ -13,16 +13,24 @@ function App() {
 
   return (
     <div className="App">
-      <Box
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
         p={3}
+        pl={4}
         css={`
-          background: var(--background-gray-muted);
+          background: var(--background-surface);
+          border-bottom: 1px solid var(--border);
         `}
       >
-        <ThemeSwitcher handleSetTheme={setTheme} />
+        <Text as="h3">Color palette</Text>
+        <Flex alignItems="center">
+          <Text mr={2}>Theme:</Text>
+          <ThemeSwitcher handleSetTheme={setTheme} />
+        </Flex>
         {/* <input type="text" placeholder="Search" /> */}
         {/* <Button>Click me</Button> */}
-      </Box>
+      </Flex>
       <Box className="container" mx="auto" p={3}>
         <Tabs
           tabs={[

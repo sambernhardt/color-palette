@@ -50,8 +50,6 @@ const Button = ({ color, variant, ...props }) => {
         cursor: pointer;
         font-family: 'Inter', sans-serif;
 
-        @extend .focus;
-
         &:hover {
           background: ${backgroundColorHover};
         }
